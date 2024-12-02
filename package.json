@@ -6,14 +6,16 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "webpack": "webpack -d"
+    "webpack": "webpack -d",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.25.9",

@@ -6,18 +6,14 @@ module.exports = {
     app: "./src/index.js"
   },
   output: {
-    path: __dirname + '/public/js',
-    filename: "[name].js"
+    path: path.resolve(__dirname, 'public/js'),
+    filename: 'app.js',
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'), // 静的ファイルのルートディレクトリ
-    },
-    devMiddleware: {
-      publicPath: '/js/', // publicPath は devMiddleware 内に移動
-    },
+    static: path.resolve(__dirname, 'public'),
     port: 8080,
-    hot: true, // ホットリロードを有効化
+    open: true,
+    historyApiFallback: true,
   },
   devtool: "eval-source-map",
   mode: 'development',
