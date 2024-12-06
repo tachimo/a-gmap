@@ -6,8 +6,8 @@ module.exports = {
     app: "./src/index.js"
   },
   output: {
-    path: path.resolve(__dirname, 'public/js'),
-    filename: 'app.js',
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js',
   },
   devServer: {
     static: path.resolve(__dirname, 'public'),
@@ -24,7 +24,12 @@ module.exports = {
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: ['babel-loader'],
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],  // ReactのJSXを変換するために追加
+        },
+      },
      },
    ],
   },
