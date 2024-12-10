@@ -14,6 +14,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'build'),
       filename: 'js/bundle.js',
       clean: true,
+      publicPath: '/',
     },
     mode: argv.mode || 'development', // mode の設定
     devtool: isProduction ? 'source-map' : 'eval-source-map', // ソースマップの設定
